@@ -1,0 +1,22 @@
+{% extends "base_home.html" %}  
+{% block theBody %} 
+<div id="myLog">
+    <br>
+    <img src="{{ url_for('static',filename='images/icon.png') }}" id="logo">
+    <form action="/download" method="POST">
+        <h2>SRZ YOUTUBE VIDEO DOWNLOADER</h2>
+        <input type="text" name="link" placeholder="paste your valid youtube link here" required>
+        <br>
+        <select id="btn"  name="fileType">
+            <option value="mp3">MP3</option>
+            <option value="mp4">MP4</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Download" id="btn">
+    </form>
+    {% if error %}
+    <p id="{{style}}">{{ error }}</p>
+    {% endif %}
+</div>
+{% endblock %}
